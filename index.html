@@ -484,6 +484,121 @@
     </div>
 </section>
 
+        <section id="level2-atlas" style="margin-top: 80px;">
+    <h2>Level 2 Showcase: Vision-Language Comparative Atlas</h2>
+    <p class="subtitle" style="margin-bottom: 32px;">Evaluating direct CLIP vector mapping against Gemma 3 structural caption embeddings across 87 personal Sims 4 assets.</p>
+
+    <div class="corpus-box" style="margin-bottom: 48px; border-left: 4px solid var(--accent-color);">
+        <h3 style="font-family: var(--serif-font); font-size: 1.8rem; font-weight: 500; margin-bottom: 12px;">Prompt Engineering Diagnostic: The "Sim Taxonomy" Loop</h3>
+        <p style="font-size: 0.95rem; margin-bottom: 16px;">
+            During the initial generation pass, an overarching vision-language failure emerged: the model iteratively tagged assets with generic, unhelpful phrases like <em>"sim girl," "sim boy,"</em> or <em>"human."</em> Because these identical tokens populated nearly every single file in the cache, the vector space compressed, rendering specific character retrieval mathematically impossible. 
+        </p>
+        <p style="font-size: 0.95rem; font-weight: 500; color: var(--accent-color);">
+            💡 Solution: The caption generation loop was fine-tuned with strict contextual constraints, forcing the VLM to bypass basic identity tags and instead prioritize granular architectural attributes, environmental lighting weights, weather phenomena, and distinct action states.
+        </p>
+    </div>
+
+    <div class="atlas-grid">
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Success</span>
+                <img src="assets/cmpr%20snow.png" alt="Snow Query Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"snow"</div>
+                <div class="metrics">Dual System Alignment</div>
+                <p>Both retrieval paradigms performed flawlessly. CLIP easily mapped the global white color distribution and high luminosity values of the winter scenes, while the VLM caption layer successfully queried the explicit text tokens describing outdoor weather environments.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Success</span>
+                <img src="assets/cmpr%20selfie.png" alt="Selfie Query Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"selfie"</div>
+                <div class="metrics">Compositional Alignment</div>
+                <p>Both models correctly isolated screenshots of characters holding phones at steep arm-length angles. Due to the background complexity of the virtual spaces, both systems included some additional domestic interiors in the lower-ranked results, but preserved high initial precision.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">VLM Win</span>
+                <img src="assets/cmpr%20night.png" alt="Dark Night Sky Query Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"a dark night sky"</div>
+                <div class="metrics">VLM Text-Concept Overriding CLIP</div>
+                <p>A major victory for Level 2 captioning. The text-retrieval pipeline successfully parsed explicit descriptions of nighttime scenes. CLIP experienced a visual abstract failure, pulling a flat, dark-blue interior wallpaper asset into the top-1 slot by treating its color profile as a literal midnight sky.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">CLIP Win</span>
+                <img src="assets/cmpr%20blue.png" alt="Blue Query Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"blue."</div>
+                <div class="metrics">CLIP Chromatic Dominance</div>
+                <p>For raw, single-token color retrieval, CLIP significantly outperformed the VLM layer. CLIP handles raw pixel-wavelength maps instinctively, pinning heavily saturated blue assets instantly. The caption engine lagged behind because its fine-tuned design focused on objects and actions rather than indexing every background hue.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Success</span>
+                <img src="assets/cmpr%20cozy.png" alt="Cozy Query Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"cozy"</div>
+                <div class="metrics">Abstract Mood Convergence</div>
+                <p>Both engines demonstrated an impressive capacity for abstract mood translation. CLIP recognized localized warm lighting matrices and dense room clutter, while the VLM mapped descriptions of soft textiles, burning fireplaces, and warm domestic spaces onto the prompt.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Nuanced Split</span>
+                <img src="assets/queer.png" alt="Queer Query Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"queer"</div>
+                <div class="metrics">Visual vs. Narrative Priority</div>
+                <p>CLIP pinned the high-contrast rainbow flag immediately due to explicit color association. The caption model successfully recognized the rainbow asset textually, but its optimized human-centric design gave priority to the expressive characters framed within the scene, shifting the flag lower down the list.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">VLM Win</span>
+                <img src="assets/cmpr%20seaside.png" alt="Seaside Query Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"seaside"</div>
+                <div class="metrics">Spatial Logic vs. Navigation Directions</div>
+                <p>The caption model correctly pulled coastal horizon screenshots. CLIP failed the query by matching generic city street perspectives; because those specific urban paths leading down toward the water function as game directions within the gameplay collection, CLIP's visual vector confused structural roads with actual beach terrain.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Success</span>
+                <img src="assets/cmpr%20sea.png" alt="Sea Query Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"sea"</div>
+                <div class="metrics">Literal Object Recovery</div>
+                <p>When the query was reduced from the complex spatial concept of "seaside" to the literal object "sea," both architectures realigned perfectly. CLIP isolated the flat, uniform blue-cyan horizontal water blocks, while the VLM engine matched the explicit oceanic descriptions written into your cache.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
     </main>
 
     <div class="lightbox" id="lightbox" onclick="closeLightbox()">
