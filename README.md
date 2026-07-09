@@ -4,7 +4,10 @@ MDDF SS26 Comp-Sci Final Assignment by Ilayda Dinc, taught by Prof. Moritz Schwi
 ## 📂 Corpus Statement
 
 ### Collection Identity
-[The Sims 4 - Gameplay Collection]
+The Sims 4 - Gameplay Collection
+
+### Collection Amount
+87 images
 
 ### Intent & Selection
 This specific collection was intentionally selected to challenge a joint text-image embedding model's capacity to distinguish subtle compositional changes, weather types and landscapes, human or animal figures, color dominations without relying on explicit metadata tags or generated descriptive captions. Each image is a 3D render of own creations.
@@ -36,15 +39,17 @@ A joint text–image embedding model search platform built over a custom archive
 #### 1. Query: "a cat"
 * **Result Metrics:** Top-1 Hit Score: `0.270`
 * **Embedding-Space Analysis:** CLIP successfully recognized the top 3 cat images in the curation. It included a dog render with a ranking of 0.233 on the 4th place. The dog image was expected as an error. The 5th place was an unexpected image of a guitar, that resembled the shape of a cat.
-#### 2. Query: [Insert Query 2]
+#### 2. Query: "queer"
 * **Result Metrics:** Top-1 Hit Score: `0.289`
-* **Embedding-Space Analysis:** [Explain briefly why the model matched this query to the specific visual elements of the image].
+* **Embedding-Space Analysis:** CLIP successfully found the image with the rainbow flag.
+#### 3. Query: "computer"
+* **Result Metrics:** Top-1 Hit Score: `0.269`
+* **Embedding-Space Analysis:** CLIP successfully found the image with the rainbow flag.
 
-*... [Repeat this structure for your 7 successful queries] ...*
 
 ### 🔴 System Failures
 
-#### 8. Query: [Insert Counting/Spatial Constraint Query, e.g., "Exactly three red elements"]
+#### 8. Query: "a cat"
 * **Result Metrics:** Returned asset with multiple objects or a single large object. Score: `0.241`
 * **Embedding-Space Analysis:** A known limitation of CLIP-based architectures is the struggle with exact counting and complex compositionality. The text encoder heavily weights individual tokens like "red", shifting the query vector toward any cluster matching that color profile while disregarding the numerical constraint.
 
