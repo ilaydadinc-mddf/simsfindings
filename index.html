@@ -125,6 +125,71 @@
             h1 { font-size: 2.8rem; }
             header, main { padding: 40px 20px; }
         }
+        
+        /* Pipeline Flow Styles */
+        .pipeline-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .pipeline-node {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px 20px;
+            flex: 1;
+            min-height: 160px;
+            position: relative;
+            text-align: center;
+        }
+        .node-number {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--border-color);
+            color: var(--text-color);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .node-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            margin-top: 4px;
+        }
+        .node-desc {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+        .pipeline-arrow {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            user-select: none;
+        }
+        .pipeline-row-connector {
+            text-align: center;
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin: -10px 0;
+        }
+
+        /* Responsive stack for tablets/mobile screens */
+        @media (max-width: 900px) {
+            .pipeline-container { flex-direction: column; gap: 24px; }
+            .pipeline-arrow { transform: rotate(90deg); margin: -10px 0; }
+            .pipeline-row-connector { display: none; }
+            .pipeline-node { width: 100%; min-height: auto; }
+        }
     </style>
 </head>
 <body data-theme="light">
@@ -192,6 +257,70 @@
                     <strong>Curation Process</strong>
                     <p style="margin-top: 4px;">The 87 individual assets were systematically compiled, deduplicated, and unified into standardized high-resolution formats. The visual distribution was strictly audited to maintain balanced variation across colors, lighting, and structural configurations, tricky similarities (i.e. moon vs. white circle objects, animals vs. curved nude tone objects) providing a rigorous environment for testing retrieval boundaries.</p>
                 </div>
+            </div>
+        </section>
+
+        <section id="pipeline">
+            <h2>System Architecture & Approach</h2>
+            <div class="corpus-box" style="padding: 40px 20px;">
+                
+                <div class="pipeline-container">
+                    <!-- Phase 1 -->
+                    <div class="pipeline-node">
+                        <div class="node-number">1</div>
+                        <div class="node-title">Asset Ingestion</div>
+                        <p class="node-desc">87 curated Sims 4 screenshots processed and unified into standard high-res assets.</p>
+                    </div>
+
+                    <div class="pipeline-arrow">➔</div>
+
+                    <!-- Phase 2 -->
+                    <div class="pipeline-node">
+                        <div class="node-number">2</div>
+                        <div class="node-title">Level 1: CLIP Cache</div>
+                        <p class="node-desc">Images run through OpenAI CLIP visual encoder once; normalized tensors cached to Drive.</p>
+                    </div>
+
+                    <div class="pipeline-arrow">➔</div>
+
+                    <!-- Phase 3 -->
+                    <div class="pipeline-node">
+                        <div class="node-title" style="color:var(--accent-color); font-weight:700;">Level 2: VLM Space</div>
+                        <div class="node-number" style="background:var(--accent-color);">3</div>
+                        <p class="node-desc">Gemma 3 generates rich vision captions for all images; text models index the descriptions.</p>
+                    </div>
+                </div>
+
+                <!-- Row 2 Connector for wider viewports -->
+                <div class="pipeline-row-connector">⬇</div>
+
+                <div class="pipeline-container">
+                    <!-- Phase 4 -->
+                    <div class="pipeline-node">
+                        <div class="node-number">4</div>
+                        <div class="node-title">Comparative Retrieval</div>
+                        <p class="node-desc">Natural language queries map concurrently through CLIP vs. VLM descriptive spaces to contrast similarities.</p>
+                    </div>
+
+                    <div class="pipeline-arrow">➔</div>
+
+                    <!-- Phase 5 -->
+                    <div class="pipeline-node">
+                        <div class="node-number">5</div>
+                        <div class="node-title">Gradio Diagnostics</div>
+                        <p class="node-desc">Interactive side-by-side layout interface to observe retrieval failure modes and successes.</p>
+                    </div>
+
+                    <div class="pipeline-arrow">➔</div>
+
+                    <!-- Phase 6 -->
+                    <div class="pipeline-node" style="border: 2px solid var(--accent-color);">
+                        <div class="node-number" style="background:var(--text-color); color:var(--bg-color);">6</div>
+                        <div class="node-title">RAG Extension</div>
+                        <p class="node-desc">Vector store queries prompt an LLM to reason over retrieved contextual image indices for conversational QA.</p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
