@@ -357,36 +357,132 @@
         </p>
         </section>
 
-        <section id="atlas">
-            <h2>Retrieval Atlas (Diagnostic Evaluations)</h2>
-            <div class="atlas-grid">
+       <section id="atlas">
+    <h2>Retrieval Atlas (Diagnostic Evaluations)</h2>
+    <div class="atlas-grid">
 
-                <div class="atlas-card">
-                    <div class="atlas-img-wrapper">
-                        <span class="atlas-badge badge-success">Success</span>
-                        <img src="assets/kitchen.png" alt="Query 1 Result" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="atlas-content">
-                        <div class="query-text">"cat"</div>
-                        <div class="metrics">Score Matrix: 0.312</div>
-                        <p>CLIP map translates semantic concept rules straight into flat spatial compositions containing dominant structural lines.</p>
-                    </div>
-                </div>
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Success</span>
+                <img src="cat1.png" alt="Query 1 Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"a cat"</div>
+                <div class="metrics">Top-1 Hit Score: 0.270</div>
+                <p>CLIP accurately isolated the top three cat assets. A dog render appeared at rank 4 (0.233), reflecting a common taxonomic error within the quadruped latent space. Interestingly, rank 5 returned a guitar, suggesting the text vector mapped onto the contoured silhouette and structural neck of the instrument as a geometric proxy for feline anatomy.</p>
+            </div>
+        </div>
 
-                <div class="atlas-card">
-                    <div class="atlas-img-wrapper">
-                        <span class="atlas-badge badge-failure">Failure</span>
-                        <img src="assets/cmpr cozy" alt="Query 2 Result" onclick="openLightbox(this.src)">
-                    </div>
-                    <div class="atlas-content">
-                        <div class="query-text">"Exactly three red elements"</div>
-                        <div class="metrics">Score Matrix: 0.241</div>
-                        <p>The system experiences structural failure during absolute spatial counting queries, prioritizing the "red" token over constraints.</p>
-                    </div>
-                </div>
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Success</span>
+                <img src="" alt="Query 2 Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"queer"</div>
+                <div class="metrics">Top-1 Hit Score: 0.289</div>
+                <p>The shared vector space successfully mapped this sociocultural concept directly onto the high-contrast chromatic spectrum of the rainbow flag asset, demonstrating CLIP's strength in associating symbolic text tokens with explicit visual iconography.</p>
+            </div>
+        </div>
 
-                </div>
-        </section>
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Success</span>
+                <img src="" alt="Query 3 Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"computer"</div>
+                <div class="metrics">Top-1 Hit Score: 0.269</div>
+                <p>The retrieval engine executed a precise query-to-object match across the corpus, successfully grouping all screenshots containing monitor bezels, keyboards, and office desks due to highly consistent object-attribute weights.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Success</span>
+                <img src="" alt="Query 4 Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"kitchen"</div>
+                <div class="metrics">Top-1 Hit Score: 0.275</div>
+                <p>CLIP successfully indexed all designated kitchen layouts. At the tail end of the distribution, it included a bathroom render, indicating a latent overlap driven by shared indoor spatial textures, glossy tiling surfaces, and structural counter fixtures.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Success</span>
+                <img src="" alt="Query 5 Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"tree"</div>
+                <div class="metrics">Top-1 Hit Score: 0.273</div>
+                <p>The embedding model confidently mapped outdoor foliage clusters. However, it demonstrated a spatial scale limitation by occasionally treating indoor potted plants as full trees, prioritizing the botanical leaf textures over environmental context constraints.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Success</span>
+                <img src="" alt="Query 6 Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"new york"</div>
+                <div class="metrics">Top-1 Hit Score: 0.234</div>
+                <p>While the corpus lacks real-world photography, CLIP extracted city living architectural features flawlessly. Three out of the top five slots returned landscapes heavily inspired by New York geometry, verifying its ability to translate geographic concepts into virtual design styles.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Success</span>
+                <img src="" alt="Query 7 Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"stairs"</div>
+                <div class="metrics">Top-1 Hit Score: 0.282</div>
+                <p>An exceptionally robust visual pattern match. The text vector successfully isolated the repetitive, hard-edged diagonal line sequences that characterize staircases across all instances within the architectural renders.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-success">Success</span>
+                <img src="" alt="Query 8 Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"asian"</div>
+                <div class="metrics">Top-1 Hit Score: 0.226</div>
+                <p>The model mapped this broad descriptor across multi-modal cultural markers: identifying traditional Chinese lanterns, Japan-inspired environment designs, and specific native Asian dog breeds, alongside guessing the demographic background of three styled characters.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-failure">Failure</span>
+                <img src="" alt="Query 9 Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"family"</div>
+                <div class="metrics">Top-1 Hit Score: 0.239</div>
+                <p>A systematic abstract failure mode. While the query returned multiple characters and pushed a child's bedroom into the top distribution, the model failed to compute the underlying social relationship structure, demonstrating CLIP's struggle with complex semantic human interactions.</p>
+            </div>
+        </div>
+
+        <div class="atlas-card">
+            <div class="atlas-img-wrapper">
+                <span class="atlas-badge badge-failure">Failure</span>
+                <img src="" alt="Query 10 Result" onclick="openLightbox(this.src)">
+            </div>
+            <div class="atlas-content">
+                <div class="query-text">"child"</div>
+                <div class="metrics">Top-1 Hit Score: 0.239</div>
+                <p>Despite the presence of explicit toddler screenshots and dedicated children's playroom assets within the 87 images, CLIP failed to establish a match. The stylized 3D proportions of Sims avatars likely fall outside the standard human demographic visual bounds of the pre-trained model.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
 
     </main>
 
