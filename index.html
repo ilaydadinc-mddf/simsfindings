@@ -205,13 +205,19 @@
             <b>Chosen Level:</b> Level 2: Vision-Language Caption Retrieval
         </p>
         <img
-        src="assets/cmpr%20cozy.png"
-        style="
-        width:100%;
-        margin-top:50px;
-        border-radius:12px;
-        box-shadow:0 15px 40px rgba(0,0,0,.15);
-">
+    src="assets/teaser.png"
+    onclick="openLightbox(this.src)" 
+    onmouseover="this.style.transform='scale(1.02)'"
+    onmouseout="this.style.transform='scale(1)'"
+    style="
+        width: 80%;
+        margin-top: 50px;
+        border-radius: 12px;
+        box-shadow: 0 15px 40px rgba(0,0,0,.15);
+        cursor: zoom-in; 
+        transition: transform 0.2s;
+    "
+>
     </header>
 
 
@@ -323,7 +329,6 @@
 
             </div>
             <section style="margin-bottom: 80px;">
-            <h2>System Architecture Pipeline</h2>
             <img 
         src="assets/pipeline.png" 
         alt="System Architecture Pipeline Diagram"
