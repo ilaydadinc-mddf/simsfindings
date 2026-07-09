@@ -608,7 +608,7 @@
         <div class="atlas-card" style="border-top: 3px solid var(--accent-color);">
             <div class="atlas-img-wrapper">
                 <span class="atlas-badge" style="background: var(--text-color); color: var(--bg-color);">RAG QA</span>
-                <img src="" alt="Where do people eat result" onclick="openLightbox(this.src)">
+                <img src="assets/archive3.png" alt="Where do people eat result" onclick="openLightbox(this.src)">
             </div>
             <div class="atlas-content">
                 <div class="query-text" style="font-size: 1.35rem; font-weight: 600; color: var(--accent-color);">"Where do people eat?"</div>
@@ -620,7 +620,7 @@
         <div class="atlas-card" style="border-top: 3px solid var(--accent-color);">
             <div class="atlas-img-wrapper">
                 <span class="atlas-badge" style="background: var(--text-color); color: var(--bg-color);">RAG QA</span>
-                <img src="" alt="Where do we swim result" onclick="openLightbox(this.src)">
+                <img src="assets/archive2.png" alt="Where do we swim result" onclick="openLightbox(this.src)">
             </div>
             <div class="atlas-content">
                 <div class="query-text" style="font-size: 1.35rem; font-weight: 600; color: var(--accent-color);">"Where do we swim?"</div>
@@ -632,7 +632,7 @@
         <div class="atlas-card" style="border-top: 3px solid var(--accent-color);">
             <div class="atlas-img-wrapper">
                 <span class="atlas-badge" style="background: var(--text-color); color: var(--bg-color);">RAG QA</span>
-                <img src="" alt="Where do we sleep result" onclick="openLightbox(this.src)">
+                <img src="assets/archive.png" alt="Where do we sleep result" onclick="openLightbox(this.src)">
             </div>
             <div class="atlas-content">
                 <div class="query-text" style="font-size: 1.35rem; font-weight: 600; color: var(--accent-color);">"Where do we sleep?"</div>
@@ -642,6 +642,29 @@
         </div>
 
     </div>
+
+            <section id="reflection-limitations" style="margin-top: 80px;">
+            <h2>Project Evaluation</h2>
+            <div class="corpus-box" style="padding: 32px;">
+                <div class="corpus-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 0;">
+                    
+                    <div>
+                        <strong style="font-family: var(--serif-font); font-size: 1.8rem; font-weight: 500; display: block; margin-bottom: 12px; color: var(--accent-color);">Reflection</strong>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">
+                            The comparison demonstrates that direct CLIP embeddings perform well for visual similarity, while caption-based retrieval better captures conceptual queries expressed in natural language. Structured captions also improve interpretability by making the semantic reasoning process visible. Although both approaches have limitations, combining Vision-Language Models with semantic embeddings creates a more transparent and flexible retrieval workflow.
+                        </p>
+                    </div>
+
+                    <div>
+                        <strong style="font-family: var(--serif-font); font-size: 1.8rem; font-weight: 500; display: block; margin-bottom: 12px; color: #ff3b30;">Limitations</strong>
+                        <p style="font-size: 0.95rem; line-height: 1.6;">
+                            The archive consists of only 87 images, limiting quantitative evaluation. Results depend heavily on caption quality and prompt engineering. Furthermore, semantic retrieval cannot always resolve ambiguous concepts or perform exact counting and spatial reasoning. The project focuses on qualitative comparison rather than benchmark performance.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 </section>
 
     </main>
