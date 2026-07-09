@@ -6,25 +6,27 @@
     <title>Semantic Retrieval Engine | Level 1 Showcase</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #fcfcfc;
-            --text-color: #1c1c1e;
-            --accent-color: #5856d6;
-            --card-bg: #f2f2f7;
-            --border-color: #e5e5ea;
-            --serif-font: 'Instrument Serif', Georgia, serif;
+            /* Light Theme: Crisp, subtle mint background + iconic Sims Green accent */
+            --bg-color: #f2f7f4; 
+            --text-color: #111412;
+            --accent-color: #35b804; /* Sims Plumbob Green */
+            --card-bg: #e4ebe6;
+            --border-color: #d2ded5;
+            --serif-font: 'Playfair Display', Georgia, serif;
             --sans-font: 'Inter', system-ui, sans-serif;
         }
 
         [data-theme="dark"] {
-            --bg-color: #0a0a0c;
-            --text-color: #f2f2f7;
-            --accent-color: #bf5af2;
-            --card-bg: #1c1c1e;
-            --border-color: #2c2c2e;
+            /* Dark Theme: Deep, luxurious dark green-gray + iconic Sims Green accent */
+            --bg-color: #0b120c; 
+            --text-color: #ecf3ed;
+            --accent-color: #35b804; /* Keeps the same vibrant Sims Green */
+            --card-bg: #142116;
+            --border-color: #1f3322;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,7 +35,7 @@
             color: var(--text-color); 
             font-family: var(--sans-font); 
             line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
         header {
@@ -56,17 +58,36 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            transition: all 0.2s;
+        }
+        .theme-toggle:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
         }
 
-        h1 { font-family: var(--serif-font); font-size: 4.5rem; font-weight: 400; line-height: 1.1; margin-bottom: 24px; }
-        p.subtitle { font-size: 1.25rem; color: var(--accent-color); max-width: 600px; }
+        h1 { 
+            font-family: var(--serif-font); 
+            font-size: 4.2rem; 
+            font-weight: 500; 
+            letter-spacing: -0.02em;
+            line-height: 1.1; 
+            margin-bottom: 24px; 
+        }
+        p.subtitle { font-size: 1.25rem; color: var(--accent-color); max-width: 600px; font-weight: 500; }
 
         main { max-width: 1100px; margin: 0 auto; padding: 0 40px 100px 40px; }
         
         section { margin-bottom: 80px; }
-        h2 { font-family: var(--serif-font); font-size: 2.5rem; font-weight: 400; margin-bottom: 24px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; }
+        h2 { 
+            font-family: var(--serif-font); 
+            font-size: 2.4rem; 
+            font-weight: 400; 
+            margin-bottom: 24px; 
+            border-bottom: 1px solid var(--border-color); 
+            padding-bottom: 8px; 
+        }
         
-        .corpus-box { background: var(--card-bg); padding: 32px; border-radius: 12px; margin-top: 16px; }
+        .corpus-box { background: var(--card-bg); padding: 32px; border-radius: 12px; margin-top: 16px; border: 1px solid var(--border-color); }
         .corpus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 24px; }
         
         .atlas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
@@ -75,26 +96,33 @@
             border-radius: 12px; 
             overflow: hidden; 
             border: 1px solid var(--border-color);
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .atlas-card:hover { transform: translateY(-4px); }
-        .atlas-img-wrapper { width: 100%; height: 220px; background: #8e8e93; position: relative; overflow: hidden; }
+        .atlas-card:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        [data-theme="dark"] .atlas-card:hover {
+            box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+        }
+        
+        .atlas-img-wrapper { width: 100%; height: 240px; background: #8e8e93; position: relative; overflow: hidden; }
         .atlas-img-wrapper img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
-        .atlas-badge { position: absolute; top: 12px; left: 12px; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-        .badge-success { background: #34c759; color: #fff; }
+        .atlas-badge { position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; }
+        .badge-success { background: var(--accent-color); color: #fff; }
         .badge-failure { background: #ff3b30; color: #fff; }
         
         .atlas-content { padding: 24px; }
-        .query-text { font-family: var(--serif-font); font-size: 1.5rem; margin-bottom: 8px; font-style: italic; }
-        .metrics { font-size: 0.85rem; color: var(--accent-color); font-weight: 600; margin-bottom: 12px; }
+        .query-text { font-family: var(--serif-font); font-size: 1.6rem; margin-bottom: 8px; font-style: italic; }
+        .metrics { font-size: 0.85rem; color: var(--accent-color); font-weight: 700; margin-bottom: 12px; letter-spacing: 0.02em; }
         
         /* Lightbox styling */
-        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; }
-        .lightbox img { max-width: 90%; max-height: 85%; object-fit: contain; border-radius: 4px; }
+        .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5,10,6,0.95); z-index: 1000; justify-content: center; align-items: center; }
+        .lightbox img { max-width: 90%; max-height: 85%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 30px rgba(0,0,0,0.5); }
         .lightbox-close { position: absolute; top: 30px; right: 40px; color: #fff; font-size: 2.5rem; cursor: pointer; user-select: none; }
 
         @media (max-width: 768px) {
-            h1 { font-size: 3rem; }
+            h1 { font-size: 2.8rem; }
             header, main { padding: 40px 20px; }
         }
     </style>
