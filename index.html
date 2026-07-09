@@ -207,7 +207,6 @@
        
     </header>
 
-
     <main>
 
         <section>
@@ -235,13 +234,15 @@
     onmouseout="this.style.transform='scale(1)'"
     style="
         width: 80%;
-        margin-top: 50px;
+        margin-top: 20px;
+        margin-bottom: 40px;
         border-radius: 12px;
         box-shadow: 0 15px 40px rgba(0,0,0,.15);
         cursor: zoom-in; 
         transition: transform 0.2s;
     "
 >
+
         
      <section id="corpus">
             <h2>Corpus Statement</h2>
@@ -341,6 +342,19 @@
         onmouseout="this.style.transform='scale(1)'"
     >
     </section>
+            <p style="margin-top:24px;">
+
+        Two retrieval pipelines were implemented and compared.
+
+        The CLIP baseline embeds images directly into a multimodal latent space and
+        retrieves images through cosine similarity.
+
+        The second pipeline first generates structured semantic captions using Gemma 3.
+        These captions are converted into text embeddings with
+        SentenceTransformers, allowing retrieval based on semantic descriptions rather
+        than visual appearance alone.
+
+        </p>
         </section>
 
         <section id="atlas">
