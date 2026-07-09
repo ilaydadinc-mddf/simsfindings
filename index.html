@@ -136,7 +136,7 @@
         <p style="margin-top:30px;">
             <b>Ilayda Dinc</b><br>
             Design for the Digital Futures (M.A.)<br>
-            Comp. Sci (taught by Prof. Moritz Schwind, supervised by Christopher Kopic) • Summer Semester 2026<br>
+            Comp. Sci. (taught by Prof. Moritz Schwind, supervised by Christopher Kopic) • Summer Semester 2026<br>
             <b>Chosen Level:</b> Level 2: Vision-Language Caption Retrieval
         </p>
         <img
@@ -169,18 +169,28 @@
         </p>
 
         </section>
-        <section id="corpus">
+     <section id="corpus">
             <h2>Corpus Statement</h2>
             <div class="corpus-box">
-                <div class="corpus-grid">
+                <div class="corpus-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
                     <div>
-                        <strong>Identity Matrix</strong>
-                        <p>[Specify Collection Topic / Core Theme]</p>
+                        <strong>Collection Identity</strong>
+                        <p>The Sims 4 - Gameplay Collection</p>
                     </div>
                     <div>
-                        <strong>Intent Space</strong>
-                        <p>Curated to analyze latent boundaries under compositional variations, lighting weights, and complex structures.</p>
+                        <strong>Collection Amount</strong>
+                        <p>87 images</p>
                     </div>
+                </div>
+                
+                <div style="margin-top: 28px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+                    <strong>Intent & Selection</strong>
+                    <p style="margin-top: 4px;">This specific collection was intentionally selected to challenge a joint text-image embedding model's capacity to distinguish subtle compositional changes, weather types and landscapes, human or animal figures, color dominations without relying on explicit metadata tags or generated descriptive captions. Each image is a 3D render of own creations.</p>
+                </div>
+
+                <div style="margin-top: 24px;">
+                    <strong>Curation Process</strong>
+                    <p style="margin-top: 4px;">The 87 individual assets were systematically compiled, deduplicated, and unified into standardized high-resolution formats. The visual distribution was strictly audited to maintain balanced variation across colors, lighting, and structural configurations, tricky similarities (i.e. moon vs. white circle objects, animals vs. curved nude tone objects) providing a rigorous environment for testing retrieval boundaries.</p>
                 </div>
             </div>
         </section>
@@ -204,7 +214,7 @@
                 <div class="atlas-card">
                     <div class="atlas-img-wrapper">
                         <span class="atlas-badge badge-failure">Failure</span>
-                        <img src="https://picsum.photos/600/400?random=2" alt="Query 2 Result" onclick="openLightbox(this.src)">
+                        <img src="assets/cmpr cozy" alt="Query 2 Result" onclick="openLightbox(this.src)">
                     </div>
                     <div class="atlas-content">
                         <div class="query-text">"Exactly three red elements"</div>
