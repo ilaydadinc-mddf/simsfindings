@@ -460,7 +460,7 @@
             <div class="atlas-content">
                 <div class="query-text">"asian"</div>
                 <div class="metrics">Top-1 Hit Score: 0.226</div>
-                <p>The model mapped this broad descriptor across multi-modal cultural markers: identifying traditional Chinese lanterns, Japan-inspired environment designs, and specific native Asian dog breeds, alongside guessing the demographic background of three styled characters.</p>
+                <p>The model mapped this broad descriptor across multi-modal cultural markers: identifying traditional Chinese lanterns, Japan-inspired environment designs, and specific native Asian dog breeds, but still guessing the demographic background of three styled characters.</p>
             </div>
         </div>
 
@@ -539,7 +539,7 @@
             <div class="atlas-content">
                 <div class="query-text">"a dark night sky"</div>
                 <div class="metrics">VLM Text-Concept Overriding CLIP</div>
-                <p>A major victory for Level 2 captioning. The text-retrieval pipeline successfully parsed explicit descriptions of nighttime scenes. CLIP experienced a visual abstract failure, pulling a flat, dark-blue interior wallpaper asset into the top-1 slot by treating its color profile as a literal midnight sky.</p>
+                <p>A victory for Level 2 captioning. The text-retrieval pipeline successfully parsed explicit descriptions of nighttime scenes. CLIP experienced a visual abstract failure, pulling a flat, dark-blue interior wallpaper asset into the top-3 slot by treating its color profile as a literal midnight sky.</p>
             </div>
         </div>
 
@@ -551,7 +551,7 @@
             <div class="atlas-content">
                 <div class="query-text">"blue."</div>
                 <div class="metrics">CLIP Chromatic Dominance</div>
-                <p>For raw, single-token color retrieval, CLIP significantly outperformed the VLM layer. CLIP handles raw pixel-wavelength maps instinctively, pinning heavily saturated blue assets instantly. The caption engine lagged behind because its fine-tuned design focused on objects and actions rather than indexing every background hue.</p>
+                <p>For raw, single-token color retrieval, CLIP outperformed the VLM layer. CLIP handles raw pixel-wavelength maps instinctively, pinning heavily saturated blue assets. The caption engine lagged behind because its fine-tuned design focused on landscapes that might be blue rather than indexing every background hue.</p>
             </div>
         </div>
 
@@ -563,7 +563,7 @@
             <div class="atlas-content">
                 <div class="query-text">"cozy"</div>
                 <div class="metrics">Abstract Mood Convergence</div>
-                <p>Both engines demonstrated an impressive capacity for abstract mood translation. CLIP recognized localized warm lighting matrices and dense room clutter, while the VLM mapped descriptions of soft textiles, burning fireplaces, and warm domestic spaces onto the prompt.</p>
+                <p>Both engines demonstrated an impressive capacity for abstract mood translation. CLIP recognized localized warm lighting matrices and fire colors, while the VLM mapped soft textiles, and warm domestic spaces onto the prompt.</p>
             </div>
         </div>
 
@@ -599,7 +599,7 @@
             <div class="atlas-content">
                 <div class="query-text">"sea"</div>
                 <div class="metrics">Literal Object Recovery</div>
-                <p>When the query was reduced from the complex spatial concept of "seaside" to the literal object "sea," both architectures realigned perfectly. CLIP isolated the flat, uniform blue-cyan horizontal water blocks, while the VLM engine matched the explicit oceanic descriptions written into your cache.</p>
+                <p>When the query was reduced from the complex spatial concept of "seaside" to the literal object "sea," both architectures realigned perfectly. CLIP isolated the flat, uniform blue-cyan horizontal water blocks, while the VLM engine matched the explicit oceanic descriptions written into the cache.</p>
             </div>
         </div>
 
@@ -620,7 +620,7 @@
             <div class="atlas-content">
                 <div class="query-text" style="font-size: 1.35rem; font-weight: 600; color: var(--accent-color);">"Where do people eat?"</div>
                 <div style="margin: 14px 0 8px 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; opacity: 0.6;">Retrieved Context & Synthesis:</div>
-                <p style="font-size: 0.95rem;">The vector index retrieved screenshots containing dining room sets, bars, and kitchen island counters. Synthesizing these descriptions, the RAG agent accurately identified areas equipped with barstools, functional dining tables, and kitchen surfaces as the primary social zones for dining within the domestic gameplay setups.</p>
+                <p style="font-size: 0.95rem;">The vector index retrieved screenshots containing dining room sets, bars, and kitchen island counters. Synthesizing these descriptions, the RAG agent accurately identified areas equipped with barstools, functional dining tables, cocktails, and kitchen surfaces as the primary social zones for dining within the gameplay setups.</p>
             </div>
         </div>
 
@@ -632,7 +632,7 @@
             <div class="atlas-content">
                 <div class="query-text" style="font-size: 1.35rem; font-weight: 600; color: var(--accent-color);">"Where do we swim?"</div>
                 <div style="margin: 14px 0 8px 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; opacity: 0.6;">Retrieved Context & Synthesis:</div>
-                <p style="font-size: 0.95rem;">The query pulled assets depicting open water, pool ladders, and coastal shorelines from packs like Sulani. The system cross-referenced these blue-cyan horizontal outdoor coordinates with the fine-tuned caption variables to determine that the swimming pools and open ocean spaces are the explicit environments for aquatic locomotion.</p>
+                <p style="font-size: 0.95rem;">The query pulled assets depicting open water, all pool images, and coastal shorelines. The system cross-referenced these blue-cyan horizontal outdoor coordinates with the fine-tuned caption variables to determine that the swimming pools and open ocean spaces are the explicit environments for aquatic locomotion.</p>
             </div>
         </div>
 
@@ -644,7 +644,7 @@
             <div class="atlas-content">
                 <div class="query-text" style="font-size: 1.35rem; font-weight: 600; color: var(--accent-color);">"Where do we sleep?"</div>
                 <div style="margin: 14px 0 8px 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; opacity: 0.6;">Retrieved Context & Synthesis:</div>
-                <p style="font-size: 0.95rem;">The engine isolated bedroom assets, indexing double beds, cribs, nightstands, and low-ambient lighting states. The language model synthesized these visual-textual bounds to verify that these secluded residential chambers are designated for rest, isolating toddler rooms and master suites from common living zones.</p>
+                <p style="font-size: 0.95rem;">The engine isolated bedroom assets, indexing double beds, nightstands, and low-ambient lighting states. The language model synthesized these visual-textual bounds to verify that these secluded residential chambers are designated for rest, but still confusing master suites with common living zones.</p>
             </div>
         </div>
 
